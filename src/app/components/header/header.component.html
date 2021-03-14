@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
-  <button mat-icon-button aria-label="Example icon-button with menu icon">
+  <button routerLink="home/login" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
   <span>Ejercicio Praxys</span>
@@ -9,9 +9,9 @@
       Subir
 
     </button>
-    <button routerLink="layout/profile" mat-flat-button color="primary" aria-label="Perfil">
+    <button [routerLink]="['/layout',{outlets:{left:['profile']}}]" mat-flat-button color="primary" aria-label="Perfil">
       <mat-icon>account_box</mat-icon>
-       Ingresar
+      Ingresar
 
     </button>
   </div>

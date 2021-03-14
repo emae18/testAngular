@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 
 //extrasImports
+import { HttpClientModule } from '@angular/common/http';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from 'src/app/global/materials/material.module';
 import { FooterComponent } from './components/footer/footer.component';
@@ -16,6 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
 import {FormsModule,  ReactiveFormsModule} from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { CrudTemplateComponent } from './components/crud-template/crud-template.component';
+import { DocumentsComponent } from './components/documents/documents.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { LayoutComponent } from './components/layout/layout.component';
     FooterComponent,
     RegisterComponent,
     ProfileComponent,
-    LayoutComponent
+    LayoutComponent,
+    CrudTemplateComponent,
+    DocumentsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     MaterialModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

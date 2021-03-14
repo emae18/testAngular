@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule} from '@angular/material/toolbar';
-import { MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -15,8 +15,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
-import {MatSelectModule} from '@angular/material/select';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [],
@@ -38,7 +40,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatPaginatorModule,
     MatListModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressBarModule,
+    MatButtonToggleModule
   ],
   exports: [
     MatButtonModule,
@@ -57,7 +61,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatPaginatorModule,
     MatListModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressBarModule,
+    MatButtonToggleModule
   ],
 })
 export class MaterialModule { }
