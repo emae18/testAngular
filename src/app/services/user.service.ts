@@ -11,7 +11,7 @@ import { SharedService } from './shared.service';
   providedIn: 'root'
 })
 export class UserService {
-  url: string = environment.url_api + 'api/user/';
+  url: string = 'https://back-end-emae.herokuapp.com/api/user/';
 
   constructor(private _http: HttpClient, private shared: SharedService) { }
 

@@ -11,7 +11,7 @@ import { SharedService } from './shared.service';
   providedIn: 'root'
 })
 export class DocumentService {
-  url: string = environment.url_api + 'api/document/';
+  url: string = 'https://back-end-emae.herokuapp.com/api/document/';
 
   constructor(private _http: HttpClient, private shared: SharedService) { }
 

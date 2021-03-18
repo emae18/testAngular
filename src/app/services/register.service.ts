@@ -9,7 +9,7 @@ import { SharedService } from './shared.service';
   providedIn: 'root'
 })
 export class RegisterService {
-  url: string = environment.url_api + 'api/register';
+  url: string = 'https://back-end-emae.herokuapp.com/api/register';
 
   constructor(private _htpp: HttpClient,private shared:SharedService) { }
 
