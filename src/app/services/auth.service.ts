@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Answer } from 'src/app/models/Answer';
-import { User } from 'src/app/models/user';
+import { Answer } from '../models/Answer';
+import { User } from '../models/user';
 import { environment } from '../../environments/environment';
 
 const httpOption = {
