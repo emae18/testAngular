@@ -9,17 +9,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 
 //extrasImports
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from 'src/app/global/materials/material.module';
+import { MaterialModule } from './global/materials/material.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/register/register.component';
-import {FormsModule,  ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CrudTemplateComponent } from './components/crud-template/crud-template.component';
 import { DocumentsComponent } from './components/documents/documents.component';
+import { Interceptor } from './utils/interceptor';
 
 @NgModule({
   declarations: [
@@ -42,9 +43,9 @@ import { DocumentsComponent } from './components/documents/documents.component';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule  
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

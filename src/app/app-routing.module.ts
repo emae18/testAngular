@@ -7,6 +7,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './utils/auth.guard';
 
 const routes: Routes = [
 /*   {path:'**',redirectTo: 'home'},
@@ -24,7 +25,7 @@ const routes: Routes = [
       { path: 'crud', component: CrudTemplateComponent, outlet: 'right' },
       { path: 'docs', component: DocumentsComponent, outlet: 'right' }
     ]
-  }
+  , canActivate: [AuthGuard]},
 
 ];
 

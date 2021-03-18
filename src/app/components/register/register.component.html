@@ -9,7 +9,7 @@
           <mat-card-content fxLayout="column">
             <mat-form-field appearance="outline">
               <mat-label>Ingrese su Nombre Completo</mat-label>
-              <input matInput placeholder="Nombre Apellido">
+              <input (change)='fullname=$event.target.value' [value]="fullname" matInput placeholder="Nombre Apellido">
             </mat-form-field>
               <mat-form-field appearance="outline">
                   <mat-label>Ingresa tu correo</mat-label>
@@ -18,15 +18,15 @@
               </mat-form-field>
               <mat-form-field appearance="outline">
                   <mat-label>Ingresa tu contraseña</mat-label>
-                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <input (change)='password=$event.target.value' [value]="password" matInput [type]="hide ? 'password' : 'text'">
                   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                       [attr.aria-pressed]="hide">
                       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   </button>
               </mat-form-field>
-              <mat-form-field appearance="outline">
+              <mat-form-field  appearance="outline">
                 <mat-label>Confirma tu contraseña</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'">
+                <input (change)='cPassword=$event.target.value' [value]="cPassword" matInput [type]="hide ? 'password' : 'text'">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -34,17 +34,17 @@
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Ingrese su Fecha de Nacimiento</mat-label>
-              <input matInput placeholder="01/08/1997" [matDatepicker]="picker" (focus)="picker.open()">
+              <input (dateChange)="setDateBirthday('change', $event)" fromControlName="dateBirthday" matInput placeholder="01/08/1997" [matDatepicker]="picker" (focus)="picker.open()">
               <mat-datepicker-toggle matSuffix [for]="picker">
                 <mat-icon matDatepickerToggleIcon>cake</mat-icon>
               </mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
               <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="space-between none">
-                  <mat-checkbox color="primary">Acepto los Términos de Privacidad</mat-checkbox>
+                  <mat-checkbox [checked]="terms" (change)="setTerms($event)"  color="primary">Acepto los Términos de Privacidad</mat-checkbox>
               </div>
           </mat-card-content>
-          <button mat-raised-button color="primary">Registrarse</button>
+          <button (click)="signUp()" mat-raised-button color="primary">Registrarse</button>
       </form>
       <mat-divider></mat-divider>
       <a fxFlexAlign="center" fxFlexOffset="5" style="color:rgb(124, 91, 214); font-size:large" routerLink="/home/login" >

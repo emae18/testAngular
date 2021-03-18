@@ -14,8 +14,8 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Ingresa tu contraseña</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    <input matInput (change)='password=$event.target.value' [value]="password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix  (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                         [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
@@ -25,9 +25,10 @@
                     <button mat-button color="primary">Olvidé mi Contraseña</button>
                 </div>
             </mat-card-content>
-            <button mat-raised-button routerLink="/home/profile" color="primary">Ingresar</button>
+            <!-- routerLink="/home/profile" -->
+            <button mat-raised-button  color="primary" (click)="login()">Ingresar</button>
         </form>
-        <button fxFlexOffset="5" mat-raised-button>
+        <button fxFlexOffset="5" mat-raised-button disabled>
             <mat-icon>facebook</mat-icon>
             Ingresar con Facebook
         </button>
