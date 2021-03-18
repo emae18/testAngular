@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Answer } from '../models/Answer';
+import { Answer } from 'src/app/models/Answer';
 import { Document } from '../models/document';
 import { SharedService } from './shared.service';
 
